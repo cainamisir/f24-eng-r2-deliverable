@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { Database } from "@/lib/schema";
 import Image from "next/image";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogFooter } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
 import { EditSpeciesDialog } from "./edit-species-card";
 import { PenIcon, Trash2Icon } from "lucide-react";
 import { createBrowserSupabaseClient } from "@/lib/client-utils";
@@ -90,7 +90,7 @@ export default function SpeciesCard({ species, sessionId }: { species: Species; 
             </DialogHeader>
             <DialogFooter>
               <Button variant="outline" onClick={() => setIsDeleteDialogOpen(false)}>Cancel</Button>
-              <Button variant="destructive" onClick={handleDelete}>Delete</Button>
+              <Button variant="destructive" onClick={() => void handleDelete()}>Delete</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

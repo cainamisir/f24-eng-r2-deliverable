@@ -99,7 +99,7 @@ export function EditSpeciesDialog({ species, open, onOpenChange }: EditSpeciesDi
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)}>
+        <form onSubmit={(e) => { e.preventDefault(); void form.handleSubmit(onSubmit)(e); }} className="space-y-8">
             <div className="grid w-full items-center gap-4">
               <FormField
                 control={form.control}
