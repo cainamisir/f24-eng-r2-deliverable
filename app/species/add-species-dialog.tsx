@@ -75,7 +75,7 @@ const defaultValues: Partial<FormData> = {
   total_population: null,
   image: null,
   description: null,
-  endangered: null,
+  endangered: false,
 };
 
 export default function AddSpeciesDialog({ userId }: { userId: string }) {
